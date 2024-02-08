@@ -33,9 +33,7 @@ For this macro to work you need....
 - You will need to create a dummy output pin on a spare/unused pin on your mainboard.
 - This can be anything, even a pin on the EXP display socket/s if you're NOT using them.
 
-This dummy pin is used as a manual override within Mainsail to disable/enable the bed fans at any point during print once it 
-has finished the `PRINT_START` macro. The system will monitor the position of this switch during the print.
-It is automatically reset once the current print has ended.
+This dummy pin is used as a manual override within Mainsail to disable/enable the bed fans at any point during print once it has finished the `PRINT_START` macro. The system will monitor the position of this switch during the print. It is automatically reset once the current print has ended.
 
 
 ## Paste this into your printer.cfg file:
@@ -55,61 +53,48 @@ pin: *** <<<< Insert your own pin HERE!
 
 ## CHAMBER TEMP SENSOR OR TEMP CONTROLLED CHAMBER COOLING FAN
 
-You can use either, the macro's operation will be the same.
-If you have only a chamber temp sensor & not a chamber fan you'll need to "ctrl+F" `temperature_fan chamber`
-& replace all instances EXCEPT the two in the `_BED_FANS_HELPER macro` with `temperature_sensor Chamber_Temp`
-Also make sure `variable_chamber_fan_enable` is set False!
+You can use either, the macro's operation will be the same. If you have only a chamber temp sensor & not a chamber fan you'll need to "ctrl+F" `temperature_fan chamber`
+& replace all instances EXCEPT the two in the `_BED_FANS_HELPER macro` with `temperature_sensor Chamber_Temp`. Also make sure `variable_chamber_fan_enable` is set False!
 
 You'll then need to go to your `printer.cfg` & set up the sensor there.
 
-Be sure to call it: `[temperature_sensor Chamber_Temp]`
-Then add the rest of the settings for your sensor there so it will work & the macro can read chamber temps.
-See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature-sensors
+Be sure to call it: `[temperature_sensor Chamber_Temp]`, then add the rest of the settings for your sensor there so it will work & the macro can read chamber temps. See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature-sensors
 
-For a Chamber fan you need to call it `[temperature_fan chamber]`
-Also make sure "variable_chamber_fan_enable" is set True!
-Then add the rest of the settings for your sensor there so it will work & the macro can monitor chamber temps.
-See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature_fan
+For a Chamber fan you need to call it `[temperature_fan chamber]`, also make sure `variable_chamber_fan_enable` is set True! Then add the rest of the settings for your sensor there so it will work & the macro can monitor chamber temps. See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature_fan
 
-#####################################################################################################
 
-This Macro set has been designed to be used with the Demon Essentials Voron 2.4 Macro pack
-Downloading & installing the whole pack is recommended as it provides a fuller experience.
+### This Macro set has been designed to be used with the Demon Essentials Voron 2.4 Macro packDownloading & installing the whole pack is recommended as it provides a fuller experience.
 
 https://github.com/3DPrintDemon/Demon_Essentials_Voron_2.4_Edition
 
-#####################################################################################################
-To install the system:
-#####################################################################################################
-Place the file into your printer's config folder & add [include ./demon_bed_fans_v1.1.cfg] in your printer.cfg file.
-Or as mentioned install the full Demon macro pack!
-Create the required printer.cfg sections as described above.
-Add your chosen pins to it.
-Save & Restart.
-You may need to PID tune the bed with the fans on if you get heating errors while in use.
+## To install the system:
 
-#####################################################################################################
-USAGE OPTION 1: Inside the Demon Essentials Macro Pack
-#####################################################################################################
+- Place the file into your printer's config folder & add `[include ./demon_bed_fans_v1.1.cfg]` in your `printer.cfg` file. 
+- Or as mentioned install the full Demon macro pack!
+- Create the required `printer.cfg` sections as described above.
+- Add your chosen pins to it.
+- Save & Restart.
+- You may need to `PID tune` the bed with the fans on if you get heating errors while in use.
+
+## USAGE OPTION 1: Inside the Demon Essentials Macro Pack
+
 Its all set up, just set your sensors & pins in the printer.cfg
-Then set your choices in the demon_user_settings.cfg file
+Then set your choices in the `demon_user_settings.cfg` file
 You're done!
 
-#####################################################################################################
-USAGE OPTION 2: Stand-alone Macro - NOT used inside the Demon Essentials Macro Pack
-#####################################################################################################
-Set your sensors & pins in the printer.cfg as shown above.
-Add the below command to anywhere in your start macro (after your bed temp has been set) where you 
-want your macro to set the fans. This can be used more than once.
+## USAGE OPTION 2: Stand-alone Macro - NOT used inside the Demon Essentials Macro Pack
 
+- Set your sensors & pins in the printer.cfg as shown above.
+- Add the below command to anywhere in your start macro (after your bed temp has been set) where you want your macro to set the fans. This can be used more than once.
+```
 _BED_FAN_SET 
-
+```
 VERY IMPORTANT! Be sure to enable the Bed Fans Monitor at the very end of your start macro by
 adding the below command to the last line of your start macro:
-
+```
 UPDATE_DELAYED_GCODE ID=_BED_FAN_MONITOR DURATION=1
 RESPOND TYPE=COMMAND MSG="Bed Fans Monitor Active"
-
+```
 The monitor will do the rest during the print.
 
 #####################################################################################################
