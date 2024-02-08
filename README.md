@@ -13,8 +13,9 @@ If you set the slider during a print to a value below 50% then that value is aut
 This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
 
-## MONITORED CONDITIONS:
-- Bed target temp
+## MONITORED CONDITIONS
+- Bed temperature
+- Bed target temperature
 - Bed Fans speed settings
 - Manual speed change
 - Live adjustment macro use
@@ -25,7 +26,7 @@ This can be done at any point during actual printing, even when the `BED_FANS` a
 - Printer's current state
 - [output_pin DISABLE_BED_FANS]
 
-## INSTRUCTIONS:
+## INSTRUCTIONS
 For this macro to work you need....
 - A Voron 2.4 Printer (or similar!)
 - Some installed & correctly set up bed fans.
@@ -36,7 +37,7 @@ For this macro to work you need....
 This dummy pin is used as a manual override within Mainsail to disable/enable the bed fans at any point during print once it has finished the `PRINT_START` macro. The system will monitor the position of this switch during the print. It is automatically reset once the current print has ended.
 
 
-## Paste this into your printer.cfg file:
+## Paste this into your printer.cfg file
 
 ```
 [fan_generic Bed_Fans]
@@ -67,7 +68,7 @@ For a Chamber fan you need to call it `[temperature_fan chamber]`, also make sur
 
 https://github.com/3DPrintDemon/Demon_Essentials_Voron_2.4_Edition
 
-## To install the system:
+## To install the system
 
 - Place the file into your printer's config folder & add `[include ./demon_bed_fans_v1.1.cfg]` in your `printer.cfg` file. 
 - Or as mentioned install the full Demon macro pack!
@@ -97,39 +98,41 @@ RESPOND TYPE=COMMAND MSG="Bed Fans Monitor Active"
 ```
 The monitor will do the rest during the print.
 
-#####################################################################################################
-Be sure to remove the hashes (#) & enter your chosen pin numbers or this will not work!
-#####################################################################################################
+## SETUP
 
-#####################################################################################################
-SETUP:
-#####################################################################################################
-There's 2 ways to this, if using the full Demon macro pack then these settings are set in the 
-demon_user_settings.cfg file.
+There's 2 ways to do this, if using the full Demon macro pack then these settings are set in the 
+`demon_user_settings.cfg` file.
 
-If using this as a stand-alone cfg use the variables in the _BED_FAN_VARS macro below.
+If using this as a stand-alone cfg use the variables in the `_BED_FAN_VARS` macro.
 DO NOT CHANGE the last 5 variables or you'll confuse the macro & it will NOT work correctly.
 
-Set "chamber_threshold" to your minimum chamber printing temp for your filament.
-This is the temp at which the Bed Fans will shift down from "high speed" to "low speed".
-Set "chamber_fan" even if you dont have one to your maximum chamber printing temp for your filament. 
+Set `chamber_threshold` to your minimum chamber printing temp for your filament.
+This is the temp at which the `Bed Fans` will shift down from `high` speed to `low` speed.
+Set `chamber_fan` even if you dont have one to your maximum chamber printing temp for your filament. 
 This is the temp at which the bed fans will turn off.
-Set the "variable_high" for high speed setting to around 0.50-0.70 DO NOT SET 1!! Thats too much!
-Set the "variable_low" for low speed setting to around 0.2-0.3, this is good.
-Be sure to set "variable_enable" to True if you wish to use the system!! <<<<<<<<<<<<<<<<<< IMPORTANT!!
-Set the "varibale_cool" to True if you wish to use the bed fans to cool the bed & chamber when finished
-Also set the "variable_cool_temp" to the temperature to cool down to.
+Set the `variable_high` for high speed setting to around 0.50-0.70 DO NOT SET 1!! Thats too much!
+Set the `variable_low` for low speed setting to around 0.2-0.3, this is good.
 
-#####################################################################################################
-TESTING:
-#####################################################################################################
-To test the one-time _BED_FAN_SET macro system:
-In the Console paste: _BED_FAN_READ
-It will return the default settings.
-To enable the system paste in the Console: SET_GCODE_VARIABLE MACRO=_BED_FAN_VARS VARIABLE=enable VALUE=True
-Set a bed target temp to begin heating - if you do NOT do this it will not work.
-Then paste in: _BED_FAN_SET
-This will activate the portion of the system used in the PRINT_START macro one time.
+Be sure to set `variable_enable` to True if you wish to use the system!! IMPORTANT!!
+
+Set the `varibale_cool` to True if you wish to use the bed fans to cool the bed & chamber when finished
+Also set the `variable_cool_temp` to the temperature to cool down to.
+
+## TESTING
+
+To test the one-time `_BED_FAN_SET` macro system:
+- In the Console paste: _BED_FAN_READ
+- It will return the default settings.
+- To enable the system paste in the Console:
+```
+SET_GCODE_VARIABLE MACRO=_BED_FAN_VARS VARIABLE=enable VALUE=True
+```
+- Set a bed target temp to begin heating - if you do NOT do this it will not work.
+- Then paste in:
+```
+_BED_FAN_SET
+```
+This will activate the portion of the system used in the `PRINT_START` macro one time.
 When up to temp &/or over temp run it again to see/test different outcomes.
 
 #####################################################################################################
