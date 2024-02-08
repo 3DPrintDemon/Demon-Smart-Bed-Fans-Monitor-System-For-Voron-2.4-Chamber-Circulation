@@ -1,5 +1,8 @@
 # Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-
 
+<img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
+## Don't forget if you like & use this project you can buy me a beer/coffee to say thanks. https://ko-fi.com/3dprintdemon
+
 This BED_FAN_MONITOR system is configured to be smart & adaptive, it monitors what the system is doing & also what you are doing during the print! The system knows if you pause or cancel the print, it knows if you change 
 the Chamber Fan target, or if you change the Bed Fans speed! It even knows if the system changed things or if you did!
 
@@ -171,3 +174,6 @@ you change the printer's state back to standby by resetting the print status in 
 
 NOTE THE MONITOR ONLY RUNS AFTER YOUR START MACRO HAS FINISHED! 
 This why we use the _BED_FAN_SET command in the Start macro itself.
+
+<img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
+## Don't forget if you like & use this project you can buy me a beer/coffee to say thanks. https://ko-fi.com/3dprintdemon
