@@ -127,7 +127,7 @@ Set the `variable_low` for low speed setting to around 0.2-0.3, this is good.
 
 Be sure to set `variable_enable` to True if you wish to use the system!! IMPORTANT!!
 
-Set the `varibale_cool` to True if you wish to use the bed fans to cool the bed & chamber when finished
+Set the `variable_cool` to True if you wish to use the bed fans to cool the bed & chamber when finished
 Also set the `variable_cool_temp` to the temperature to cool down to.
 
 ## TESTING
