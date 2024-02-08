@@ -116,7 +116,7 @@ There's 2 ways to do this, if using the full Demon macro pack then these setting
 `demon_user_settings.cfg` file.
 
 If using this as a stand-alone cfg use the variables in the `_BED_FAN_VARS` macro.
-DO NOT CHANGE the last 5 variables or you'll confuse the macro & it will NOT work correctly.
+DO NOT CHANGE the last 4 variables or you'll confuse the macro & it will NOT work correctly.
 
 Set `chamber_threshold` to your minimum chamber printing temp for your filament.
 This is the temp at which the `Bed Fans` will shift down from `high` speed to `low` speed.
