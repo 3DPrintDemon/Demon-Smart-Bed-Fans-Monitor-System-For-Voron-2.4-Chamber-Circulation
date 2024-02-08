@@ -21,6 +21,8 @@ The system also has full console support so it tells you exactly what its doing 
 
 It'll also confirm any user inputs during printing
 
+NOTE it normally takes a fan speed difference of about 5-10% for the system to register, this is not the macro but how klipper works.
+
 ## MONITORED CONDITIONS
 - Bed temperature
 - Bed target temperature
