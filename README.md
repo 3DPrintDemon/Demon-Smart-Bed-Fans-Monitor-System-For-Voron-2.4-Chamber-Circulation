@@ -166,7 +166,7 @@ To test the `_BED_FAN_MONITOR` system:
 This is when the monitor comes online & it will modify the bed fans according to print conditions.
 
  
-## PRINTING & MANUAL ADJUSTMENTS
+## COOLING & MANUAL ADJUSTMENTS
 
 There are 2 ways to control this system, by using the `BED_FANS_SET_SPEED` macro or `BED_FAN` slider! Adjusting the `CHAMBER_FAN` target during the print also effects the macro, as it is also monitored.
 
