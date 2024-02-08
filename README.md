@@ -12,13 +12,26 @@ It has numerous methods of monitoring your print & settings & can react to them 
 If you set the slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting.
 This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
+
+## MONITORED CONDITIONS:
+- Bed target temp
+- Bed Fans speed settings
+- Manual speed change
+- Live adjustment macro use
+- Live fans slider use
+- Chamber heat Threshold - low temp
+- Chamber cooling fan - high temp
+- Manual temperature change
+- Printer's current state
+- [output_pin DISABLE_BED_FANS]
+
 ## INSTRUCTIONS:
 For this macro to work you need....
-A Voron 2.4 Printer (or similar!)
-Some installed & correctly set up bed fans.
-A printer with a simple chamber temp sensor or a temp controlled chamber cooling fan.
-You will need to create a dummy output pin on a spare/unused pin on your mainboard.
-This can be anything, even a pin on the EXP display socket/s if you're NOT using them.
+- A Voron 2.4 Printer (or similar!)
+- Some installed & correctly set up bed fans.
+- A printer with a simple chamber temp sensor or a temp controlled chamber cooling fan.
+- You will need to create a dummy output pin on a spare/unused pin on your mainboard.
+- This can be anything, even a pin on the EXP display socket/s if you're NOT using them.
 
 This dummy pin is used as a manual override within Mainsail to disable/enable the bed fans at any point during print once it 
 has finished the `PRINT_START` macro. The system will monitor the position of this switch during the print.
@@ -38,8 +51,6 @@ off_below: 0.19
 [output_pin DISABLE_BED_FANS]
 pin: *** <<<< Insert your own pin HERE!
 ```
-
-### Be sure to remove the hashes (#) & enter your chosen pin numbers or this will not work!
 
 
 ## CHAMBER TEMP SENSOR OR TEMP CONTROLLED CHAMBER COOLING FAN
@@ -148,17 +159,6 @@ This is when the monitor comes online & it will modify the bed fans according to
 
 #####################################################################################################
 
-MONITORED CONDITIONS:
-Bed target temp
-Bed Fans speed settings
-Manual speed change
-Live adjustment macro use
-Live fans slider use
-Chamber heat Threshold - low temp
-Chamber cooling fan - high temp
-Manual temperature change
-Printer's current state
-[output_pin DISABLE_BED_FANS]
 
 ##################################################################################################### 
 PRINTING & MANUAL ADJUSTMENTS
