@@ -1,4 +1,4 @@
-# Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation
+# Demon-Smart-Bed-Fans-Monitor-Control-System-For-Voron-2.4-Chamber-Circulation
 
 <img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
 
