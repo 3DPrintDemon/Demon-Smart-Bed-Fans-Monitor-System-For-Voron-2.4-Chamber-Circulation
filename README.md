@@ -1,17 +1,18 @@
 # Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-
 
 <img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
+
 ## Don't forget if you like & use this project you can buy me a beer/coffee to say thanks. https://ko-fi.com/3dprintdemon
 
-This BED_FAN_MONITOR system is configured to be smart & adaptive, it monitors what the system is doing & also what you are doing during the print! The system knows if you pause or cancel the print, it knows if you change 
-the Chamber Fan target, or if you change the Bed Fans speed! It even knows if the system changed things or if you did!
+This `BED_FAN_MONITOR` system is configured to be smart & adaptive, it monitors what the system is doing & also what you are doing during the print! The system knows if you pause or cancel the print, it knows if you change 
+the `Chamber Fan target`, or if you change the `Bed Fans speed`! It even knows if the system changed things or if you did!
 
-It has numerous methods of monitoring your print & settings & can react to them all fully autonomously, you can override the system with a click of a button at any point while printing, you can modify the high & low preset speeds used for the entire print live during the print! You can change the fan speeds while the Monitor is running directly with the BED_FAN_SET_SPEED macro or by using the BED_FANS slider in the GUI!
+It has numerous methods of monitoring your print & settings & can react to them all fully autonomously, you can override the system with a click of a button at any point while printing, you can modify the high & low preset speeds used for the entire print live during the print! You can change the fan speeds while the Monitor is running directly with the `BED_FAN_SET_SPEED` macro or by using the `BED_FANS` slider in the GUI!
 
-If you set the slider during a print to a value below 50% then that value is automatically stored for use as your LOW_SPEED setting. If you move the slider to any number over 50% it will be stored & used as your high speed setting.
-This can be done at any point during actual printing, even when the BED_FANS are not running! This adjustment is reset after the print finishes, returning to file defaults.
+If you set the slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting.
+This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
-INSTRUCTIONS:
+## INSTRUCTIONS:
 For this macro to work you need....
 A Voron 2.4 Printer (or similar!)
 Some installed & correctly set up bed fans.
@@ -20,13 +21,13 @@ You will need to create a dummy output pin on a spare/unused pin on your mainboa
 This can be anything, even a pin on the EXP display socket/s if you're NOT using them.
 
 This dummy pin is used as a manual override within Mainsail to disable/enable the bed fans at any point during print once it 
-has finished the PRINT_START macro. The system will monitor the position of this switch during the print.
+has finished the `PRINT_START` macro. The system will monitor the position of this switch during the print.
 It is automatically reset once the current print has ended.
 
-#####################################################################################################
-Paste this into your printer.cfg file:
-#####################################################################################################
 
+## Paste this into your printer.cfg file:
+
+```
 [fan_generic Bed_Fans]
 pin: *** <<<< Insert your own pin HERE!
 max_power: 1.0
@@ -36,25 +37,25 @@ off_below: 0.19
 
 [output_pin DISABLE_BED_FANS]
 pin: *** <<<< Insert your own pin HERE!
+```
 
-#####################################################################################################
-Be sure to remove the hashes (#) & enter your chosen pin numbers or this will not work!
-#####################################################################################################
+### Be sure to remove the hashes (#) & enter your chosen pin numbers or this will not work!
 
-CHAMBER TEMP SENSOR OR TEMP CONTROLLED CHAMBER COOLING FAN
+
+## CHAMBER TEMP SENSOR OR TEMP CONTROLLED CHAMBER COOLING FAN
 
 You can use either, the macro's operation will be the same.
-If you have only a chamber temp sensor & not a chamber fan you'll need to "ctrl+F" "temperature_fan chamber"
-& replace all instances EXCEPT the two in the _BED_FANS_HELPER macro with "temperature_sensor Chamber_Temp"
-Also make sure "variable_chamber_fan_enable" is set False!
+If you have only a chamber temp sensor & not a chamber fan you'll need to "ctrl+F" `temperature_fan chamber`
+& replace all instances EXCEPT the two in the `_BED_FANS_HELPER macro` with `temperature_sensor Chamber_Temp`
+Also make sure `variable_chamber_fan_enable` is set False!
 
-You'll then need to go to your printer.cfg & set up the sensor there.
+You'll then need to go to your `printer.cfg` & set up the sensor there.
 
-Be sure to call it: [temperature_sensor Chamber_Temp]
+Be sure to call it: `[temperature_sensor Chamber_Temp]`
 Then add the rest of the settings for your sensor there so it will work & the macro can read chamber temps.
 See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature-sensors
 
-For a Chamber fan you need to call it [temperature_fan chamber]
+For a Chamber fan you need to call it `[temperature_fan chamber]`
 Also make sure "variable_chamber_fan_enable" is set True!
 Then add the rest of the settings for your sensor there so it will work & the macro can monitor chamber temps.
 See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature_fan
@@ -176,4 +177,5 @@ NOTE THE MONITOR ONLY RUNS AFTER YOUR START MACRO HAS FINISHED!
 This why we use the _BED_FAN_SET command in the Start macro itself.
 
 <img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
+
 ## Don't forget if you like & use this project you can buy me a beer/coffee to say thanks. https://ko-fi.com/3dprintdemon
