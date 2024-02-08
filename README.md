@@ -5,7 +5,7 @@
 ## Don't forget if you like & use this project you can buy me a beer/coffee to say thanks. https://ko-fi.com/3dprintdemon
 
 This `BED_FAN_MONITOR` system is configured to be smart & adaptive, it monitors what the system is doing & also what you are doing during the print! The system knows if you pause or cancel the print, it knows if you change 
-the `Chamber Fan target`, or if you change the `Bed Fans speed`! It even knows if the system changed things or if you did!
+the `Chamber Fan target`, or if you change the `Bed Fans speed`! It even knows if the system changed things or if you did! It can even help to gently cool the printer after the print finishes!
 
 It has numerous methods of monitoring your print & settings & can react to them all fully autonomously, you can override the system with a click of a button at any point while printing, you can modify the high & low preset speeds used for the entire print live during the print! You can change the fan speeds while the Monitor is running directly with the `BED_FAN_SET_SPEED` macro or by using the `BED_FANS` slider in the GUI!
 
@@ -22,7 +22,7 @@ This can be done at any point during actual printing, even when the `BED_FANS` a
 - Live fans slider use
 - Chamber heat Threshold - low temp
 - Chamber cooling fan - high temp
-- Manual temperature change
+- Manual target change
 - Printer's current state
 - [output_pin DISABLE_BED_FANS]
 
@@ -135,34 +135,25 @@ _BED_FAN_SET
 This will activate the portion of the system used in the `PRINT_START` macro one time.
 When up to temp &/or over temp run it again to see/test different outcomes.
 
-#####################################################################################################
+To test the `_BED_FAN_MONITOR` system:
+- Enable the system by making sure the `variable_enable` is set `True`
+- If using the full `Demon Essentials Macro Pack` set the above options in the `demon_user_settings.cfg`
+- Be sure you have `UPDATE_DELAYED_GCODE ID=_BED_FAN_MONITOR DURATION=1` at the end of your start macro.
+- If using the full `Demon Essentials Macro Pack` this is already done.
+- Start a quick test print & wait for your start macro to finish & for the printer to start the print proper. 
 
-To test the _BED_FAN_MONITOR system:
-Enable the system by making sure the "variable_enable" is set True
-If using the full Demon Essentials Macro Pack set the above options in the demon_user_settings.cfg
-Be sure you have UPDATE_DELAYED_GCODE ID=_BED_FAN_MONITOR DURATION=1 at the end of your start code.
-If using the full Demon Essentials Macro Pack this is already done.
-Start a quick test print & wait for your start macro to finish & for the printer to start the print proper. 
 This is when the monitor comes online & it will modify the bed fans according to print conditions.
 
-#####################################################################################################
+ 
+## PRINTING & MANUAL ADJUSTMENTS
 
-
-##################################################################################################### 
-PRINTING & MANUAL ADJUSTMENTS
-#####################################################################################################
-There are 2 ways to control this system, by using the BED_FANS_SET_SPEED macro or BED_FAN slider!
-Adjusting the CHAMBER_FAN target during the print also effects the macro, as it is also monitored.
-
-
-
-
+There are 2 ways to control this system, by using the `BED_FANS_SET_SPEED` macro or `BED_FAN` slider! Adjusting the `CHAMBER_FAN` target during the print also effects the macro, as it is also monitored.
 
 If cooling is on the printer will use the bed fans to gently cool the bed & chamber until the cooling temp is reached or 
-you change the printer's state back to standby by resetting the print status in Mainsail web interface.
+you change the printer's state back to `Standby` by resetting the print status in `Mainsail` web interface.
 
-NOTE THE MONITOR ONLY RUNS AFTER YOUR START MACRO HAS FINISHED! 
-This why we use the _BED_FAN_SET command in the Start macro itself.
+### NOTE THE MONITOR ONLY RUNS AFTER YOUR START MACRO HAS FINISHED! 
+This why we use the `_BED_FAN_SET` command in the Start macro itself.
 
 <img width="171" alt="kofi_s_tag_dark" src="https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-/assets/122202359/9946e1db-241c-479b-8107-644efef74132">
 
