@@ -15,6 +15,8 @@ It has numerous methods of monitoring your print & settings & can react to them 
 If you set the slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting.
 This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
+Or if you want to override your `LOW` speed setting for example & give the fans a boost you can set whatever value you wish for either the `LOW` or 'HIGH` settings using the `BED_FAN_SET_SPEED` macro.
+
 The system also has full console support so it tells you exactly what its doing & when its doing it! It'll also confirm any user inputs during printing
 
 ## MONITORED CONDITIONS
