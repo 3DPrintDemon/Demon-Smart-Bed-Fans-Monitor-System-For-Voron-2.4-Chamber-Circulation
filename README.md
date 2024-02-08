@@ -12,6 +12,7 @@ It has numerous methods of monitoring your print & settings & can react to them 
 If you set the slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting.
 This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
+The system also has full console support so it tells you exactly what its doing & when its doing it! It'll also confirm any user inputs during printing
 
 ## MONITORED CONDITIONS
 - Bed temperature
@@ -70,7 +71,17 @@ https://github.com/3DPrintDemon/Demon_Essentials_Voron_2.4_Edition
 
 ## To install the system
 
-- Place the file into your printer's config folder & add `[include ./demon_bed_fans_v1.1.cfg]` in your `printer.cfg` file. 
+- Download & place the file into your printer's config folder & add `[include ./demon_bed_fans_v1.1.cfg]` in your `printer.cfg` file.
+- Or use ssh & paste in:
+```
+cd /home/pi/printer_data/config
+```
+NOTE: the above command is for a real Raspberry Pi, if you're using a cloned system that "/pi" folder will change to mks or btt or similar.
+
+- Then clone the files using:
+```
+https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-.git
+```
 - Or as mentioned install the full Demon macro pack!
 - Create the required `printer.cfg` sections as described above.
 - Add your chosen pins to it.
