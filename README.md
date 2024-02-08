@@ -13,8 +13,7 @@ It knows if you change the `Chamber Fan target`, or if you change the `Bed Fans 
 It has numerous methods of monitoring your print & settings & can react to them all fully autonomously, you can override the system with a click of a button at any point while printing, you can modify the high & low preset speeds used for the entire print live during the print! You can change the fan speeds while the Monitor is running directly with the `BED_FAN_SET_SPEED` macro or by using the `BED_FANS` slider in the `Mainsail` web interface!
 
 ## Quick Live Preset Adjust
-If you set the `BED_FANS` slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting.
-This can be done at any point during actual printing, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
+If you set the `BED_FANS` slider during a print to a value below 50% then that value is automatically stored for use as your `LOW` speed setting. If you move the slider to any number over 50% it will be stored & used as your `HIGH` speed setting. This can be done at any point during actual printing any number of times, even when the `BED_FANS` are not running! This adjustment is reset after the print finishes, returning to file defaults.
 
 Or if you want to override your <50% `LOW` speed setting for example & give the fans a boost you can set whatever value you wish for the `LOW` setting using the `BED_FAN_SET_SPEED` macro. This works for the `HIGH` speed setting too.
 
