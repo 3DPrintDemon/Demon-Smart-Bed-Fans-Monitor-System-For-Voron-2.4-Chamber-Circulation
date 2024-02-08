@@ -17,7 +17,9 @@ If you set the `BED_FANS` slider during a print to a value below 50% then that v
 
 Or if you want to override your <50% `LOW` speed setting for example & give the fans a boost you can set whatever value you wish for the `LOW` setting using the `BED_FAN_SET_SPEED` macro. This works for the `HIGH` speed setting too.
 
-The system also has full console support so it tells you exactly what its doing & when its doing it! It'll also confirm any user inputs during printing
+The system also has full console support so it tells you exactly what its doing & when its doing it! 
+
+It'll also confirm any user inputs during printing
 
 ## MONITORED CONDITIONS
 - Bed temperature
