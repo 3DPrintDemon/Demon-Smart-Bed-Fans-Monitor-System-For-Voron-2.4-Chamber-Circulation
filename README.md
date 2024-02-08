@@ -65,13 +65,13 @@ pin: *** <<<< Insert your own pin HERE!
 ## CHAMBER TEMP SENSOR OR TEMP CONTROLLED CHAMBER COOLING FAN
 
 You can use either, the macro's operation will be the same. If you have only a chamber temp sensor & not a chamber fan you'll need to "ctrl+F" `temperature_fan chamber`
-& replace all instances EXCEPT the two in the `_BED_FANS_HELPER macro` with `temperature_sensor Chamber_Temp`. Also make sure `variable_chamber_fan_enable` is set False!
+& replace all instances EXCEPT the two in the `_BED_FANS_HELPER macro` with `temperature_sensor Chamber_Temp`. Also make sure `variable_chamber_fan_enable` is set `False`!
 
 You'll then need to go to your `printer.cfg` & set up the sensor there.
 
 Be sure to call it: `[temperature_sensor Chamber_Temp]`, then add the rest of the settings for your sensor there so it will work & the macro can read chamber temps. See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature-sensors
 
-For a Chamber fan you need to call it `[temperature_fan chamber]`, also make sure `variable_chamber_fan_enable` is set True! Then add the rest of the settings for your sensor there so it will work & the macro can monitor chamber temps. See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature_fan
+For a Chamber fan you need to call it `[temperature_fan chamber]`, also make sure `variable_chamber_fan_enable` is set `True`! Then add the rest of the settings for your sensor there so it will work & the macro can monitor chamber temps. See this link for help: https://www.klipper3d.org/Config_Reference.html#temperature_fan
 
 
 ### This Macro set has been designed to be used with the Demon Essentials Voron 2.4 Macro packDownloading & installing the whole pack is recommended as it provides a fuller experience.
