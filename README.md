@@ -8,7 +8,7 @@ This `BED_FAN_MONITOR` system is configured to be smart & adaptive, it monitors 
 
 The system knows if you pause the print & will pause the fans too so that if you open the chamber you're not sucking in cold air from outside & blowing hot air out the top of the open chamber!
 It also knows if you cancel the print & it will stop the fans if running, alternatively if the fans were not running it will start them on low to gently cool the chamber if you have that feature enabled.
-It knows if you change the `Chamber Fan target`, or if you change the `Bed Fans speed` & will adapt it behaviour to suit!
+It knows if you change the `Chamber Fan target`, or if you change the `Bed Fans speed` & will adapt it's behaviour to suit!
 
 It has numerous methods of monitoring your print & settings & can react to them all fully autonomously, you can override the system with a click of a button at any point while printing, you can modify the high & low preset speeds used for the entire print live during the print! You can change the fan speeds while the Monitor is running directly with the `BED_FAN_SET_SPEED` macro or by using the `BED_FANS` slider in the GUI!
 
