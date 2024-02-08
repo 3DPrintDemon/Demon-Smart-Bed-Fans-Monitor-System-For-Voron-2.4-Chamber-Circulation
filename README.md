@@ -76,9 +76,10 @@ https://github.com/3DPrintDemon/Demon_Essentials_Voron_2.4_Edition
 ```
 cd /home/pi/printer_data/config
 ```
-NOTE: the above command is for a real Raspberry Pi, if you're using a cloned system that "/pi" folder will change to mks or btt or similar.
+NOTE: the above command is for a real Raspberry Pi, if you're using a cloned system that "/pi" folder will change to `mks` or `btt` or similar.
 
 - Then clone the files using:
+
 ```
 https://github.com/3DPrintDemon/Demon-Smart-Bed-Fans-Monitor-System-For-Voron-2.4-Chamber-Circulation-.git
 ```
