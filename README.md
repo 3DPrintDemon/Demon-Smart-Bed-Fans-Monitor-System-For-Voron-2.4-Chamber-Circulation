@@ -32,6 +32,8 @@ The system also has full console support so it tells you exactly what its doing 
 - Printer's current state
 - [output_pin DISABLE_BED_FANS]
 
+Monitoring is refreshed once every 10 seconds
+
 ## INSTRUCTIONS
 For this macro to work you need....
 - A Voron 2.4 Printer (or similar!)
